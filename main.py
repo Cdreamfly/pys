@@ -29,7 +29,7 @@ driver.find_element_by_id("btnLogin").click()
 
 df = pd.read_excel("data.xlsx",index_col=0)
 
-for num in range(150,200):
+for num in range(500,600):
     row_data = df.loc[[num]].values
     for cel in row_data:
         print(cel)
