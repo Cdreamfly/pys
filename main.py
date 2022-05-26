@@ -2,13 +2,9 @@
 # 作者：程梦飞
 # 联系电话：就不联系了
 # 声明：此代码仅作为分享交流所用，不许未经作者同意作为商业盈利
-# ###
+###
 
-from selenium import webdriver
 from msedge.selenium_tools import Edge, EdgeOptions
-from selenium.webdriver import ActionChains
-from selenium.webdriver.support.select import Select
-from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 
 from time import sleep
@@ -32,7 +28,7 @@ driver.find_element_by_id("btnLogin").click()
 
 df = pd.read_excel("data.xlsx",index_col=0)
 
-for num in range(1,300):
+for num in range(3,300):
     row_data = df.loc[[num]].values
     for cel in row_data:
         print(cel)
@@ -42,8 +38,8 @@ for num in range(1,300):
     p = cel[14]
     area = cel[16]
     year = cel[17]
-
     print(num,address,name,p,area,year)
+
     driver.switch_to.default_content()
     driver.find_element_by_xpath('//*[@id="menu"]/li[1]/dl/dd[1]/a').click()
     driver.switch_to.frame(driver.find_element_by_id('iframe1'))
@@ -64,7 +60,6 @@ for num in range(1,300):
 
     #建筑名称
     temp = "房屋"+name
-    driver.find_element_by_xpath('//*[@id="tbName"]')
     driver.find_element_by_xpath('//*[@id="tbName"]').send_keys(temp)
 
     #排查对象
@@ -182,4 +177,4 @@ for num in range(1,300):
     driver.switch_to.default_content()
     driver.switch_to.frame(driver.find_element_by_id("iframe1"))
     #保存
-    driver.find_element_by_xpath('//*[@id="btnSave"]').click()
+    WebDriverWait(driver, 10).until(lambda driver: driver.find_element_by_xpath('//*[@id="btnSave"]')).click()
