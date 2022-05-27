@@ -6,9 +6,9 @@
 
 from msedge.selenium_tools import Edge, EdgeOptions
 from selenium.webdriver.support.wait import WebDriverWait
-
 from time import sleep
 import pandas as pd
+
 
 def Select(id,xpath):
     driver.find_element_by_id(id).click()
