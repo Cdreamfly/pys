@@ -21,8 +21,8 @@ driver = Edge(options=options, executable_path=r"C:\Users\Cmf\Downloads\edgedriv
 driver.get("http://zjt.icitpower.com/pc/Console/Login.aspx")#打开地址网页
 driver.maximize_window()#最大化网页
 ## login
-driver.find_element_by_id("txtUserName").send_keys("17337042333")#账号
-driver.find_element_by_id("txtUserPwd").send_keys("111111")#密码
+driver.find_element_by_id("txtUserName").send_keys("xxxxx")#账号
+driver.find_element_by_id("txtUserPwd").send_keys("xxxx")#密码
 driver.find_element_by_id("btnLogin").click()
 
 
